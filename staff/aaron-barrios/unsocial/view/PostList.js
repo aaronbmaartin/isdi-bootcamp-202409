@@ -3,17 +3,17 @@ class PostList extends Compo {
     constructor() {
         super(document.createElement('div'))
 
-        var title = new Heading('Posts', 3)
+        const title = new Heading('Posts', 3)
         this.add(title)
 
         try {
-            var posts = getPosts().toReversed()
+            const posts = getPosts().toReversed()
 
-            posts.forEach(function (post) {
-                var postItem = new PostItem(post.username, post.image, post.text, post.date)
+            posts.forEach(post => {
+                const postItem = new PostItem(post.username, post.image, post.text, post.date)
 
                 this.add(postItem)
-            }.bind(this))
+            })
         } catch (error) {
             alert(error.message)
 

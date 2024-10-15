@@ -3,16 +3,16 @@ class PostItem extends Compo {
     constructor(username, image, text, date) {
         super(document.createElement('div'))
 
-        var userTitle = new Heading(username, 4)
+        const userTitle = new Heading(username, 4)
         this.add(userTitle)
 
-        var picture = new Image(image)
+        const picture = new Image(image)
         this.add(picture)
 
-        var comment = new Paragraph(text)
+        const comment = new Paragraph(text)
         this.add(comment)
 
-        var time = new Time(date)
+        const time = new Time(date)
         this.add(time)
     }
 }

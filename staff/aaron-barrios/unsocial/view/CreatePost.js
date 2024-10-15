@@ -3,22 +3,22 @@ class CreatePost extends Compo {
     constructor() {
         super(document.createElement('div'))
 
-        var title = new Heading('Create Post', 3)
+        const title = new Heading('Create Post', 3)
         this.add(title)
 
-        var form = new Form()
+        const form = new Form()
 
-        var imageLabel = new Label('Image', 'image')
-        var imageInput = new Input('text', 'image')
+        const imageLabel = new Label('Image', 'image')
+        const imageInput = new Input('text', 'image')
         form.add(imageLabel)
         form.add(imageInput)
 
-        var textLabel = new Label('Text', 'text')
-        var textInput = new Input('text', 'text')
+        const textLabel = new Label('Text', 'text')
+        const textInput = new Input('text', 'text')
         form.add(textLabel)
         form.add(textInput)
 
-        var submitButton = new Button('Create', 'submit')
+        const submitButton = new Button('Create', 'submit')
         form.add(submitButton)
 
         this.add(form)
@@ -26,21 +26,21 @@ class CreatePost extends Compo {
         form.addBehavior('submit', function (event) {
             event.preventDefault()
 
-            var image = imageInput.getValue()
-            var text = textInput.getValue()
+            const image = imageInput.getValue()
+            const text = textInput.getValue()
 
             try {
                 createPost(loggedInUser.username, image, text)
 
                 this.remove()
 
-                var postList = new PostList()
+                const postList = new PostList()
                 home.add(postList)
             } catch (error) {
                 alert(error.message)
 
                 console.error(error)
             }
-        }.bind(this))
+        })
     }
 }

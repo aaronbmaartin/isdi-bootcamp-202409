@@ -4,17 +4,17 @@ class PasswordInput extends Compo {
         super(document.createElement('div'))
         this.container.style.display = 'flex'
 
-        var input = new Input('password', id)
+        const input = new Input('password', id)
         input.container.style.paddingRight = '18px'
         this.add(input)
 
-        var span = new Span('🔒')
+        const span = new Span('🔒')
         span.container.style.cursor = 'pointer'
         span.container.style.position = 'absolute'
         span.container.style.right = '10px'
         this.add(span)
 
-        span.addBehavior('click', function () {
+        span.addBehavior('click', () => {
             if (span.getText() === '🔒') {
                 input.setType('text')
                 span.setText('👁️‍🗨️')

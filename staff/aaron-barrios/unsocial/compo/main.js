@@ -4,25 +4,36 @@ const title = new Heading('Compo', 1)
 page.add(title)
 
 {
-    var inputTitle = new Heading('Input', 2)
+    const inputTitle = new Heading('Input', 2)
     page.add(inputTitle)
 
-    var input = new Input('password', 'password')
+    const snippet = new Snippet('Demo', 'var input = new Input(\'password\', \'password\')\npage.add(input)')
+    page.add(snippet)
+
+    const input = new Input('password', 'password')
     page.add(input)
 }
 
 {
-    var linkTitle = new Heading('Link', 2)
+    const linkTitle = new Heading('Link', 2)
     page.add(linkTitle)
 
-    var link = new Link('Google')
+    const snippet = new Snippet('Demo', 'var link = new Link(\'Google\')\npage.add(link)')
+    page.add(snippet)
+
+
+    const link = new Link('Google')
     page.add(link)
 }
 
 {
-    var passwordInputTitle = new Heading('PasswordInput', 2)
+    const passwordInputTitle = new Heading('PasswordInput', 2)
     page.add(passwordInputTitle)
 
-    var passwordInput = new PasswordInput('password')
+    const snippet = new Snippet('Demo', 'var passwordInput = new PasswordInput(\'password\')\npage.add(passwordInput)')
+    page.add(snippet)
+
+
+    const passwordInput = new PasswordInput('password')
     page.add(passwordInput)
 }

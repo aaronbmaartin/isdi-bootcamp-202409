@@ -1,4 +1,4 @@
-function registerUser(name, email, username, password, passwordRepeat) {
+const registerUser = (name, email, username, password, passwordRepeat) => {
     //CONDICIONALES PARA EL REGISTER
     //----- MÍNIMO DE LETRAS PARA EL NAME -----
     if (name.length < 2)
@@ -23,9 +23,7 @@ function registerUser(name, email, username, password, passwordRepeat) {
         throw new Error('Password does not match!')
     }
 
-    var user = users.find(function (user) {
-        return user.username === username || user.email === email
-    })
+    let user = users.find(user => user.username === username || user.email === email)
 
     if (user !== undefined) {
         if (user.username === username)
