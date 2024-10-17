@@ -11,11 +11,11 @@ h1 {
 }
 
 #oak {
-    margin-left: 40%;
+    margin-left: 38%;
     block-size: 600px;
 }
 
-#butOak {
+button {
     width: 500px;
     height: 100px;
 
@@ -25,6 +25,8 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    font-size: x-large;
 }
 
 label {
@@ -36,4 +38,29 @@ label {
 input {
     display: flex;
     margin-left: 46%;
+}
+
+.starters {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 5%;
+}
+
+.chooseStart {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 70%;
+    height: 100px;
+
+    font-size: x-large;
+}
+
+#starter {
+    margin-left: 40%;
 }
