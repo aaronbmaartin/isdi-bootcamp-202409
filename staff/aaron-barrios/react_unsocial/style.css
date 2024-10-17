@@ -1,0 +1,39 @@
+/* body {
+    background-color: aquamarine;
+}
+
+h1 {
+    background-color: rgb(146, 145, 145);
+    display: flex;
+    justify-content: center;
+    margin-left: 25%;
+    width: 50%;
+}
+
+#oak {
+    margin-left: 40%;
+    block-size: 600px;
+}
+
+#butOak {
+    width: 500px;
+    height: 100px;
+
+    margin-left: 35%;
+    margin-top: 5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    display: flex;
+    margin-left: 46%;
+} */

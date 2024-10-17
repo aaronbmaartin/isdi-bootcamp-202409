@@ -20,7 +20,6 @@ class Home extends Compo {
             this.remove()
 
             page.add(login)
-
         })
 
 
