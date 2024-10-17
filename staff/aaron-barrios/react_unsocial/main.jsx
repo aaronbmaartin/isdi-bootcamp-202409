@@ -159,7 +159,12 @@ function Home(props) {
                 props.logout()
             }}>Logout</button>
 
-        <button type="button">+</button>
+        <button type="button"
+            onClick={event => {
+                event.preventDefault()
+
+                props.createPost()
+            }}>+</button>
 
         <div>
             <h3>Posts</h3>
@@ -182,6 +187,50 @@ function Home(props) {
         </div>
     </section>
 }
+
+//FUNCIÓN PARA CREAR EL POST
+function CreatePost(props) {
+    return <section>
+
+        <h2>New Post</h2>
+        <form onSubmit={event => {
+
+            event.preventDefault()
+
+            //CAPTURO LOS VALORES DEL NUEVO POST (FORMULARIO)
+            //LOS NOMBRES QUE CAPTURAS ES IMPORTANTE QUE COINCIDAN CON EL ID DEL INPUT
+            const { target: { imageLink: { value: image }, postTitle: { value: text } } } = event
+
+
+            try {
+
+                //LLAMO A LA FUNCION REGISTER USER CON LOS PARAMETROS CAPTURADOS
+                createPost(image, text)
+
+                //RESETEO DEL FORMULARIO
+                event.target.reset() // => form.reset()
+
+                //LE PASO LA FUNCIÓN "registered" DEL PARAMERTRO PROPS PARA DECIRLE A APP QUE ME HE LOGGEADO
+                props.newPost()
+
+            } catch (error) {
+                alert(error.message)
+
+                console.error(error)
+            }
+        }}>
+
+            <label htmlFor="postTitle">Post Title</label>
+            <input type="text" id="postTitle" />
+
+            <label htmlFor="imageLink">Image Link</label>
+            <input type="text" id="imageLink" />
+
+            <button type="submit">Create Post</button>
+        </form>
+    </section>
+}
+
 
 //CLASE QUE AGRUPA TODAS LAS FUNCIONES/VIEWS Y NOS VA A CAMBIAR ENTRE ELLAS
 class App extends Component {
@@ -207,7 +256,12 @@ class App extends Component {
                     registered={() => this.setState({ view: 'login' })} />}
             {this.state.view === 'home'
                 && <Home
-                    logout={() => this.setState({ view: 'login' })} />}
+                    logout={() => this.setState({ view: 'login' })}
+                    createPost={() => this.setState({ view: 'posts' })} />}
+
+            {this.state.view === 'posts'
+                && <CreatePost
+                    newPost={() => this.setState({ view: 'home' })} />}
 
         </div>
     }
